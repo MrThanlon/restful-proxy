@@ -1,0 +1,29 @@
+{
+  "name": "restful-proxy",
+  "version": "0.1.0",
+  "description": "A convenient RESTful HTTP client.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify src/restful.js -s restful | uglifyjs > dist/bundle.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrThanlon/restful-proxy"
+  },
+  "homepage": "https://github.com/MrThanlon/restful-proxy",
+  "bugs": {
+    "url": "https://github.com/MrThanlon/restful-proxy/issues"
+  },
+  "keywords": [
+    "rest",
+    "restful",
+    "fetch"
+  ],
+  "author": "MrThanlon",
+  "license": "MIT",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "uglify-js": "^3.13.9"
+  }
+}
