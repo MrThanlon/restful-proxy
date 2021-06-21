@@ -1,5 +1,7 @@
 # restful-proxy
 
+[![Node.js CI](https://github.com/MrThanlon/restful-proxy/actions/workflows/node.js.yml/badge.svg)](https://github.com/MrThanlon/restful-proxy/actions/workflows/node.js.yml)
+
 可能是最优雅的 RESTful HTTP 客户端。
 
 [English](https://github.com/MrThanlon/restful-proxy/blob/master/README.md)

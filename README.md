@@ -1,5 +1,7 @@
 # restful-proxy
 
+[![Node.js CI](https://github.com/MrThanlon/restful-proxy/actions/workflows/node.js.yml/badge.svg)](https://github.com/MrThanlon/restful-proxy/actions/workflows/node.js.yml)
+
 Probably the most elegant RESTful HTTP client.
 
 [中文](https://github.com/MrThanlon/restful-proxy/blob/master/README_zh.md)
