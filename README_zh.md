@@ -71,4 +71,4 @@ restful.requestCallback = (method, url, data) => {
 
 ## License
 
-MIT
+[MIT](https://github.com/MrThanlon/restful-proxy/blob/master/LICENSE)

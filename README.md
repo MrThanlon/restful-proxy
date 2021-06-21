@@ -71,4 +71,4 @@ In the interactive environment (REPL), since it may run automatically when typin
 
 ## License
 
-MIT
+[MIT](https://github.com/MrThanlon/restful-proxy/blob/master/LICENSE)

@@ -4,7 +4,7 @@
   "description": "A convenient RESTful HTTP client.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "browserify src/restful.js -s restful | uglifyjs > dist/bundle.js"
   },
   "repository": {
@@ -24,6 +24,7 @@
   "license": "MIT",
   "devDependencies": {
     "browserify": "^17.0.0",
+    "jest": "^27.0.4",
     "uglify-js": "^3.13.9"
   }
 }
