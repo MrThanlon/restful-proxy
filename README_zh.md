@@ -61,6 +61,14 @@ restful.requestCallback = (method, url, data) => {
     method,
     url,
     data
-  );
+  });
 }
 ```
+
+## Notice
+
+在交互式环境（REPL）中，由于可能会在键入时自动运行，可能导致URL错误，所以不建议在交互式环境中使用。
+
+## License
+
+MIT

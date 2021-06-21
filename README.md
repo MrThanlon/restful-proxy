@@ -61,6 +61,14 @@ restful.requestCallback = (method, url, data) => {
     method,
     url,
     data
-  );
+  });
 }
 ```
+
+## Notice
+
+In the interactive environment (REPL), since it may run automatically when typing, which may cause URL errors, it is not recommended to use it in an interactive environment.
+
+## License
+
+MIT
