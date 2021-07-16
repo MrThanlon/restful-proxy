@@ -48,7 +48,7 @@ restful.options = {
 使用npm:
 
 ```shell
-npm install restful.js
+npm install restful-proxy
 ```
 
 ## 在Node.js中使用

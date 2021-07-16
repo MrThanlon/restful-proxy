@@ -48,7 +48,7 @@ Using jsDelivr CDN:
 Using npm:
 
 ```shell
-npm install restful.js
+npm install restful-proxy
 ```
 
 ## For node.js
