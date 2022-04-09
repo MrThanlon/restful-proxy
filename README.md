@@ -10,20 +10,22 @@ Probably the most elegant RESTful HTTP client.
 
 ```javascript
 // GET /user/profile/avatar
-let res = await restful.user.profile.avatar('get');
+let res = await restful.user.profile.avatar.get();
 
 // POST /user/profile with data
-res = await restful.user.profile('post', {name: 'mrthanlon'});
+res = await restful.user.profile.post({
+  body: JSON.stringify({ name: 'mrthanlon' })
+});
 
 // DELETE /post/me/lastyear
-res = await restful.post.me.lastyear('delete');
+res = await restful.post.me.lastyear.delete();
 ```
 
-We provide a `request` function to encapsulate XMLHttpRequest, of course, you can also use your own callback function:
+By default we use fetch() to send the request, you can also use it with [axios](https://github.com/axios/axios) if you don't like fetch(), or you can also use your own callback function at:
 
 ```javascript
-restful.requestCallback = (method, url, data) => {
-  console.log(method, url, data);
+restful.requestCallback = (input, init) => {
+  console.log(input, init);
 }
 ```
 
@@ -35,36 +37,22 @@ restful.options = {
 };
 ```
 
-Or you can use it with [axios](https://github.com/axios/axios).(See below)
-
 ## Installing
+
+### Browser
 
 Using jsDelivr CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/restful-proxy/dist/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/restful-proxy/dist/restful.min.js"></script>
 ```
+
+### Node.js & Webpack & Vite & rollup...
 
 Using npm:
 
 ```shell
 npm install restful-proxy
-```
-
-## For node.js
-
-We do not provide an HTTP client in the Node.js environment, so we recommend using it with [axios](https://github.com/axios/axios):
-
-```javascript
-const restful = require('restful');
-const axios = require('axios').default;
-restful.requestCallback = (method, url, data) => {
-  return axios({
-    method,
-    url,
-    data
-  });
-}
 ```
 
 ## Notice

@@ -1,11 +1,19 @@
 {
   "name": "restful-proxy",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A convenient RESTful HTTP client.",
-  "main": "index.js",
+  "module": "index.js",
+  "exports": {
+    "import": "./index.js",
+    "require": "./dist/index.cjs"
+  },
+  "browser": "index.js",
+  "main": "dist/index.cjs",
   "scripts": {
     "test": "jest",
-    "build": "browserify src/restful.js -s restful | uglifyjs > dist/bundle.js"
+    "build": "npm run build:iife && npm run build:cjs",
+    "build:iife": "rollup index.js -f iife --output.name restful | uglifyjs > dist/restful.min.js",
+    "build:cjs": "rollup index.js -f cjs | uglifyjs > dist/restful.min.cjs"
   },
   "repository": {
     "type": "git",
@@ -23,8 +31,12 @@
   "author": "MrThanlon",
   "license": "MIT",
   "devDependencies": {
-    "browserify": "^17.0.0",
+    "eslint": "^8.13.0",
     "jest": "^27.0.4",
+    "rollup": "^2.70.1",
     "uglify-js": "^3.13.9"
+  },
+  "dependencies": {
+    "node-fetch": "^3.2.3"
   }
 }
