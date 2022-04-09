@@ -10,20 +10,22 @@
 
 ```javascript
 // GET /user/profile/avatar
-let res = await restful.user.profile.avatar('get');
+let res = await restful.user.profile.avatar.get();
 
 // POST /user/profile with data
-res = await restful.user.profile('post', {name: 'mrthanlon'});
+res = await restful.user.profile.post({
+  body: JSON.stringify({ name: 'mrthanlon' })
+});
 
 // DELETE /post/me/lastyear
-res = await restful.post.me.lastyear('delete');
+res = await restful.post.me.lastyear.delete();
 ```
 
-我们提供了一个`request`函数用于封装XMLHttpRequest，当然你也可以使用自己的回调函数：
+我们默认使用fetch()发送请求，如果你不喜欢fetch()，也可以与[axios](https://github.com/axios/axios)一起使用，或者使用自己的回调函数：
 
 ```javascript
-restful.requestCallback = (method, url, data) => {
-  console.log(method, url, data);
+restful.requestCallback = (input, init) => {
+  console.log(input, init);
 }
 ```
 
@@ -35,15 +37,17 @@ restful.options = {
 };
 ```
 
-或者你也可以与[axios](https://github.com/axios/axios)一起使用。（见下文）
-
 ## 安装
+
+### 浏览器
 
 使用 jsDelivr CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/restful-proxy/dist/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/restful-proxy/dist/restful.min.js"></script>
 ```
+
+### Node.js & Webpack & Vite & rollup...
 
 使用npm:
 
@@ -51,23 +55,7 @@ restful.options = {
 npm install restful-proxy
 ```
 
-## 在Node.js中使用
-
-我们没有提供Node.js环境下的HTTP客户端，所以我们建议与[axios](https://github.com/axios/axios)一起使用:
-
-```javascript
-const restful = require('restful');
-const axios = require('axios').default;
-restful.requestCallback = (method, url, data) => {
-  return axios({
-    method,
-    url,
-    data
-  });
-}
-```
-
-## Notice
+## 注意
 
 在交互式环境（REPL）中，由于可能会在键入时自动运行，可能导致URL错误，所以不建议在交互式环境中使用。
 
