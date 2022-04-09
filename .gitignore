@@ -1,4 +1,4 @@
 .idea
 node_modules
-dist
-
+dist/restful.min.cjs
+dist/restful.min.js

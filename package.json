@@ -5,10 +5,10 @@
   "module": "index.js",
   "exports": {
     "import": "./index.js",
-    "require": "./dist/index.cjs"
+    "require": "./index.cjs"
   },
   "browser": "index.js",
-  "main": "dist/index.cjs",
+  "main": "index.cjs",
   "scripts": {
     "test": "jest",
     "build": "npm run build:iife && npm run build:cjs",
